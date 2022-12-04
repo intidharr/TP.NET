@@ -1,0 +1,70 @@
+﻿@model List<TPP3.Models.Person>
+
+@{
+    ViewData["Title"] = "PEOPLE LIST";
+}
+
+<div style="display: flex;justify-content:space-evenly;width:100%">
+    <h1 style="padding-left:370px;color:red">  People List</h1>
+    <h3>
+        <a asp-action="search" style="margin-left:500px;margin-top:100px;text-decoration: none;border-radius:5px;font-size:10px;padding:10px" class=".bg-success bg-gradient">Click here to search</a>
+    </h3>
+</div>
+<br />
+<br />
+<div>
+
+    @{
+        <dl class="row bg-success bg-gradient " style="color:P">
+            <dt class="col-sm-1">
+                Id
+            </dt>
+            <dt class="col-sm-1">
+                First Name
+            </dt>
+            <dt class="col-sm-1">
+                Last Name
+            </dt>
+
+            <dt class="col-sm-3">
+                Email
+            </dt>
+            <dt class="col-sm-4">
+                Image
+            </dt>
+            <dt class="col-sm-1">
+                Country
+            </dt>
+
+        </dl>
+        foreach (Person p in Model)
+        {
+            <dl class="row bg-secondary">
+                <dd class="col-sm-1">
+                    @p.Id
+                </dd>
+
+                <dd class="col-sm-1">
+                    @p.FirstName
+                </dd>
+
+                <dd class="col-sm-1">
+                    @p.LastName
+                </dd>
+
+                <dd class="col-sm-3">
+                    @p.Email
+                </dd>
+
+                <dd class="col-sm-4">
+                    @p.Image
+                </dd>
+
+                <dd class="col-sm-1">
+                    @p.Country
+                </dd>
+            </dl>
+        }
+    }
+
+</div>

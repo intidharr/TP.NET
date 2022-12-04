@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model TPP3.Models.Person
+}
+@{
+    ViewData["Title"] = " PERSON INFOS ";
+}
+
+
+
+@{
+    TPP3.Models.Person p = Model;
+    if (Model == null)
+    {
+        <h1 class="alert-danger">
+            NOT FOUND !
+        </h1>
+    }
+    else
+    {
+        <div style="padding-left:50px;padding-top:30px;margin-top:80px;margin-left:50px;margin-right:50px;padding-bottom:10px; border-radius:10px;background-color:darkgray">
+            <h1 style="color: mediumvioletred">Here are Person number @p.Id informations</h1>
+            <br />
+            <dl class="row ">
+                <dt class="col-sm-2" style="color: black">
+                    Id
+                </dt>
+                <dd class="col-sm-10" style="color:white">
+                    @p.Id
+                </dd>
+                <dt class="col-sm-2" style="color: black">
+                    First Name
+                </dt>
+                <dd class="col-sm-10" style="color:white">
+                    @p.FirstName
+                </dd>
+                <dt class="col-sm-2" style="color:black">
+                    Last Name
+                </dt>
+                <dd class="col-sm-10" style="color:white">
+                    @p.LastName
+                </dd>
+                <dt class="col-sm-2" style="color: black">
+                    Email
+                </dt>
+                <dd class="col-sm-10" style="color:white">
+                    @p.Email
+                </dd>
+                <dt class="col-sm-2" style="color: black">
+                    Image Url
+                </dt>
+                <dd class="col-sm-10" style="color:white">
+                    @p.Image
+                </dd>
+                <dt class="col-sm-2" style="color:black">
+                    Country
+                </dt>
+                <dd class="col-sm-10" style="color:white">
+                    @p.Country
+                </dd>
+            </dl>
+        </div>
+
+    }
+}
+
